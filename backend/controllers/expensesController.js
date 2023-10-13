@@ -3,7 +3,7 @@ const Expenses= require("../models/expensesModel")
 
 const createExpenses= async (req, res) =>{
     try{
-        let newExpense =req.body;
+        let newExpenses =req.body;
         let expenses = await Expenses.create(newExpenses)
         res.send({msg: "Expense created successfully", expenses})
     } catch (error){
