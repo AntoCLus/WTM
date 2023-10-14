@@ -1,0 +1,103 @@
+.container {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    min-height: 70vh;
+  }
+  
+  .event {
+    background-color: floralwhite;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .event-date {
+    color: blueviolet;
+  }
+  
+  .event-description {
+    color: blueviolet;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: greenyellow;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .modal h3 {
+    color: white;
+  }
+  
+  .modal input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .save-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+  
+ 
+.cancel-button {
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.react-calendar{
+  width: 60rem;
+  height: 20rem;
+  background-color: transparent;
+  border: none;
+}
+.titulo{
+  text-align: center;
+  font-weight: bold;
+
+}
+.react-calendar__tile--active:enabled:hover, .react-calendar__tile--active:enabled:focus{
+  background: limegreen;
+}
+.react-calendar__navigation__label__labelText{
+  text-transform: capitalize;
+}

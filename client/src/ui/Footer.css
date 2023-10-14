@@ -1,0 +1,15 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 4rem;
+    width: 100%;
+    background-image: url('../images/giorgio-trovato-xpJ9j7dg20E-unsplash.jpg');
+}
+
+
+.containerf {
+
+    min-height: 100vh;
+    position: relative;
+}
