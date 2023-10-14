@@ -1,9 +1,10 @@
 import "./Footer.css";
 
-export const Footer = () => {
+ const Footer = () => {
   return (
     <div className="containerf">
       <footer>footer</footer>
     </div>
   );
 };
+export default Footer;

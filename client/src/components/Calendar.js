@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+//import 'react-calendar/dist/Calendar.css';
 import './Pages.css';
-import { Header, NavBar } from '../ui/NavBar';
+import NavBar from '../ui/NavBar';
+import Header from '../ui/Header'
 
 
 
-export const CalendarWTM = () => {
+ const CalendarWTM = () => {
     const [selectedDate, setSelectedDate] = useState(null);
     const [events, setEvents] = useState([]);
     const [showModal, setShowModal] = useState(false);
@@ -117,4 +118,4 @@ export const CalendarWTM = () => {
   );
 };
 
-export default Calendar
+export default CalendarWTM
