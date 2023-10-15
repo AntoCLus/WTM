@@ -1,22 +1,41 @@
 .landing-page {
-    display: flex;
-    flex-direction: column;
-}
-
-.left-content {
-    order: 1; 
-}
-
-.right-content {
+    display: f-box;
+    flex-direction: row;;
+    min-height: 100vh;
+  }
+  
+  .left-content {
+    order: 1;
+    width: 500px;
+    height: 531.548px;
+    transform: rotate(0.007deg);
+    flex-shrink: 0;
+    color: #000;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  
+  .right-content {
     order: 2;
-}
-
-.bottom-content {
+  }
+  
+  .left-content img {
+    width: 50%;
+    height: auto
+  }
+  
+  .bottom-content {
     order: 3;
-}
-
-.navbar {
-    order: 4;
-    display: flex;
-    justify-content: flex-end; 
-}
+    color: #000;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: auto; 
+   
+  }
+  

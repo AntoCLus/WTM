@@ -4,7 +4,7 @@
     flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
-    min-height: 70vh;
+    min-height: 40%;
   }
   
   .event {

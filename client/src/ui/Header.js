@@ -6,7 +6,7 @@ import LandingPage from '../components/LandingPage';
 //import { Link } from 'react-router-dom'; <Link to="../components/LandingPage">
        
 
-function Header() {
+export function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
@@ -18,9 +18,8 @@ function Header() {
   };
 
   return (
-    <div className="header">
-      <div className="logo">
-        <img src="../images/logo.png" alt="Logo" />
+    <div className="container-header">
+      <div className="logo-header">
       </div>
       <div className="nav">
         <a href="../components/LandingPage">
@@ -41,4 +40,4 @@ function Header() {
   );
 }
 
-export default Header;
+//export default Header;
