@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faSignOutAlt, faHome } from "@fortawesome/free-solid-svg-icons";
 import './Header.css'; 
 import LandingPage from '../components/LandingPage';
-//import { Link } from 'react-router-dom'; <Link to="../components/LandingPage">
+import { Link } from 'react-router-dom'; 
        
 
 export function Header() {
@@ -22,9 +22,9 @@ export function Header() {
       <div className="logo-header">
       </div>
       <div className="nav">
-        <a href="../components/LandingPage">
+      <Link to="/home">
           <FontAwesomeIcon icon={faHome} />
-        </a>
+        </Link>
       </div>
       <div className="user">
         {isLoggedIn ? (
