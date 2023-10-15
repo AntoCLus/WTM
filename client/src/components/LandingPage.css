@@ -1,0 +1,22 @@
+.landing-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-content {
+    order: 1; 
+}
+
+.right-content {
+    order: 2;
+}
+
+.bottom-content {
+    order: 3;
+}
+
+.navbar {
+    order: 4;
+    display: flex;
+    justify-content: flex-end; 
+}

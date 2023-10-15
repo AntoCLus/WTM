@@ -3,6 +3,9 @@ import { useState } from 'react';
 import'./components/Pages.css'
 import ExpenseForm from './components/ExpenseForm';
 import CalendarWTM from './components/Calendar'
+import Header from './ui/Header';
+import { Footer } from './ui/Footer';
+
 
 function App() {
   const [expenses, setExpenses] = useState([]);
@@ -12,12 +15,12 @@ function App() {
   };
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <Header/>
       <div style={{ display: 'flex' }}>
       <ExpenseForm addExpense={addExpense} />
       <CalendarWTM expenses={expenses} />
     </div>
+    <Footer />
     </div>
   );
 }
