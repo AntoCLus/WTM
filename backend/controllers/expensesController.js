@@ -1,5 +1,6 @@
 const Expenses= require("../models/expensesModel")
-
+const express = require('express');
+const app = express()
 
 const createExpenses= async (req, res) =>{
     try{
@@ -50,5 +51,54 @@ const updateExpenses= async (req, res) =>{
     }
 }
 
+app.post('/expenses/create', createExpenses);
+
+app.get('/expenses', getAllExpenses);
+
+app.delete('/expenses/:id', deleteExpenses);
+
+app.put('/expenses/:id', updateExpenses);
+
+/*app.post('/expenses/create', async (req, res) => {
+    try {
+        const newExpense = await Expense.create(req.body);
+        res.json(newExpense);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+app.get('/expenses', async (req, res) => {
+    try {
+        const expenses = await Expense.find();
+        res.json(expenses);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+app.get('/expenses/:id', async (req, res) => {
+    try {
+        const expense = await Expense.findById(req.params.id);
+        res.json(expense);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+app.put('/expenses/:id', async (req, res) => {
+    try {
+        const updatedExpense = await Expense.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        res.json(updatedExpense);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+app.delete('/expenses/:id', async (req, res) => {
+    try {
+        const deletedExpense = await Expense.findByIdAndDelete(req.params.id);
+        res.json(deletedExpense);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+*/
 
 module.exports = {createExpenses, deleteExpenses, updateExpenses, getAllExpenses};
