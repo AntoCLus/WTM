@@ -2,9 +2,11 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 4rem;
+    height: 6rem;
     width: 100%;
-    background-image: url('../images/giorgio-trovato-xpJ9j7dg20E-unsplash.jpg');
+    background-image: url('../images/wtm.jpg');
+    background-size: cover;
+    padding: 1rem;
 }
 
 

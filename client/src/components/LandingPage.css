@@ -1,0 +1,53 @@
+.landing-page {
+    display: center;
+    flex-direction: row;
+    min-height: 100vh;
+  justify-content: center;
+  }
+  
+  .left-content {
+    order: 1;
+    width: 500px;
+    height: 531.548px;
+    transform: rotate(0.007deg);
+    flex-shrink: 0;
+    color: #000;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    position: center
+  }
+  
+  .right-content {
+    order: 2;
+  }
+  
+  .container{
+    order: 3;
+    position: absolute
+  }
+  .text-block {
+  bottom: 10%;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: absolute;
+  }
+  
+  .bottom-content {
+    order: 4;
+    color: #000;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: auto; 
+    position: right;
+   
+  }
+  

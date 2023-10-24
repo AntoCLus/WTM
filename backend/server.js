@@ -1,12 +1,13 @@
 const express = require("express")
 const app = express()
-const port = 8000
 const connection = require ("./connection")
 const incomeRoute = require("./routes/incomeRoutes")
 const taxesRoute = require ("./routes/taxesRoutes")
-const expensesRoute = require ("./routes/expensesRoutes")
+const expensesRoute = require ("./routes/ExpensesRoutes")
 const cors = require("cors")
 const mongoose = require("mongoose")
+const PORT= 8080
+
 
 
 app.use(express.json())
@@ -17,7 +18,8 @@ app.use("expenses", expensesRoute);
 
 
 
-app.listen(port, () =>{
-    console.log('Server started listening on port ${port}')
+
+app.listen(PORT, () =>{
+    console.log('Server started listening on port ${8080}')
 
 })
