@@ -1,15 +1,13 @@
 <p align="center">
-  <a href="https://github.com/AntoCLus/GreenFieldTeamG3">
-    <img src="../GreenFieldTeamG3/client/greenfieldt3-app/src/images/mike-petrucci-c9FQyqIECds-unsplash.jpg" alt="Logo" width=72 height=72>
+  <a href="https://github.com/AntoCLus/WTM">
+    <img src="../WTM/client/src/images/readme.png" alt="Logo" width=72 height=72>
   </a>
 
-  <h1 align="center">🌟 **Shop & Shine** 🌟</h1>
+  <h1 align="center">🌟 **WTM** 🌟</h1>
 
   <p align="center">
-    🛍️ Shop and Shine is a Web designed to keep track, 
-    delete and edit all the purchases we have done during the week. 
-    It has a private login and it redirects you to your frequently 
-    used pages so you can have a fast access to your shopping. 🛒✨
+    What The Money is an app designed to keep the track or your expenses, include taxes
+    And keep a better control over your income🛒✨
   </p>
 </p>
 
@@ -34,18 +32,9 @@
 
 - [GitHub Profile](https://github.com/AntoCLus)
 
-**Dimitris** 🛍️🚀👜
-
-- [GitHub Profile](https://github.com/iReeve94)
-
-**Wilkista** 🛍️✨👜
-
-- [GitHub Profile](https://github.com/Wilkista-Wandolo)
 
 
-## Thanks
-
-Social Hackers academy for the awesome opportunity
+## WORK IN PROGRESS
 
 ## Copyright and license
 
