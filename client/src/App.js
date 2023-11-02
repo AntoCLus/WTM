@@ -16,7 +16,7 @@ function App() {
   const [expenses, setExpenses] = useState([]);
   const getAllExpenses =() =>{
     try{
-      axios.get("http://localhost:8000/expenses")
+      axios.get("http://localhost:8080/expenses")
       .then((res) =>{
         setExpenses(res.data)
         console.log(expenses)
