@@ -51,13 +51,7 @@ const updateExpenses= async (req, res) =>{
     }
 }
 
-app.post('/expenses/create', createExpenses);
 
-app.get('/expenses', getAllExpenses);
-
-app.delete('/expenses/:id', deleteExpenses);
-
-app.put('/expenses/:id', updateExpenses);
 
 /*app.post('/expenses/create', async (req, res) => {
     try {
