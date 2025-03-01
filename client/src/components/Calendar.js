@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './Pages.css';
-import { Header, NavBar } from '../ui/NavBar';
+import { Header } from '../ui/Header';
+import { Navbar } from '../ui/NavBar';
 
 
 
@@ -73,8 +74,9 @@ export const CalendarWTM = () => {
 
   return (
     <div className="calendar">
+    <Navbar/>
     <Header/>
-    <NavBar/>
+    
     <h2 className='amount'>Amount</h2>
      <div className="container">
       <Calendar

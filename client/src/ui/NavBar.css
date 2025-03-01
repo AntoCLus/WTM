@@ -1,0 +1,16 @@
+.Navbar{
+    display: flex;
+
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.btn-login {
+    margin-left: 15px;
+}

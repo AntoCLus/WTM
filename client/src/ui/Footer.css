@@ -8,11 +8,12 @@ footer {
     background-size: cover;
     background-position: center center;
     padding: 1rem;
+    z-index: 1000;
 }
 
 
 .containerf {
-
-    min-height: 100vh;
+    padding-bottom: 6rem; 
+    min-height: calc(100vh - 6rem);
     position: relative;
 }

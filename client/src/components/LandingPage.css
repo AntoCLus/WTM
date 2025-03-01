@@ -5,7 +5,7 @@
   justify-content: center;
   }
   
-  .left-content {
+ /* .left-content {
     order: 1;
     width: 500px;
     height: 531.548px;
@@ -23,7 +23,7 @@
   .right-content {
     order: 2;
   }
-  
+  */
   .container{
     order: 3;
     position: absolute

@@ -22,22 +22,25 @@ export function Header() {
       <div className="logo-header">
       </div>
       <div className="nav">
-      <Link to="/home">
-          <FontAwesomeIcon icon={faHome} />
-        </Link>
-      </div>
-      <div className="user">
-        {isLoggedIn ? (
-          <>
-            <FontAwesomeIcon icon={faUser} />
-            <button onClick={handleLogout}>Log Out</button>
-          </>
-        ) : (
-          <button onClick={handleLogin}>Log In</button>
-        )}
-      </div>
+    </div> 
     </div>
   );
 }
 
 //export default Header;
+/*<div className="nav">
+<Link to="/home">
+<FontAwesomeIcon icon={faHome} />
+</Link>
+</div>
+<div className="user">
+{isLoggedIn ? (
+<>
+  <FontAwesomeIcon icon={faUser} />
+  <button onClick={handleLogout}>Log Out</button>
+</>
+) : (
+<button onClick={handleLogin}>Log In</button>
+)}
+</div>
+</div> */

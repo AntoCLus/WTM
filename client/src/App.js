@@ -9,7 +9,8 @@ import ExpenseItem from './components/ExpenseItem';
 import axios from 'axios';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import LandingPage from './components/LandingPage';
-
+import {Navbar} from './ui/NavBar'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
   return (
     
     <BrowserRouter>
+    <Navbar/>
     <Header/>
     <div style={{ display: 'flex' }}> 
     <Routes>
@@ -52,7 +54,7 @@ function App() {
       }
       />
       <Route path="/expenses" element={<ExpenseItem getAllExpenses={getAllExpenses} />}/>
-      <Route path="/home" index element={<LandingPage/>}/>
+      <Route path="/" index element={<LandingPage/>}/>
     </Routes>
      
     </div>
