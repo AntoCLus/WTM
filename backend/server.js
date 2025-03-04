@@ -9,6 +9,11 @@ const mongoose = require("mongoose")
 const PORT= 8000
 const routes = require('./routes/ExpensesRoutes')
 app.use(routes)
+const bcrypt = require ("bcrypt")
+const jwt = require ("jsonwebtoken")
+const verifyToken = require('./middleware/auth')
+const User = require('./models/userModel')
+const { default: axios } = require("axios")
 
 
 
@@ -18,6 +23,56 @@ app.use("incomes", incomeRoute);
 app.use("taxes", taxesRoute);
 app.use("/expenses", ExpensesRoutes);
 
+
+app.post("/register", async (req, res) =>{
+    try{
+        let {name, lastName, email, password} = req.body
+        if( !email || !password){
+            return res.send ({ msg: "email and password are required" })
+        }
+        let found = await User.findOne({ email })
+        if (found){
+            return res.send({
+                msg: "email exists, please login or register with a new email"
+            })
+        }
+        let hashPassword = await bcrypt.hash (password, +process.env.SALT_ROUND)
+        await User.create ({ name, lastName, email, password: hashPassword})
+        return res.status(200).send ({ msg: "registered successfully"})
+    }catch (err){
+        console.log(err)
+        res.status(500).send({ msg: "Internal server error, please try again later" })
+    }
+})
+app.post("/login", async (req, res) => {
+    try {
+        let { email, password } = req.body;
+        if (email.length < 1 || password.length < 1) {
+            return res.send({ msg: "email and password are required" });
+        } else {
+            let user = await User.findOne({ email });
+            if (!user) {
+                return res.send({ msg: "User not found" });
+            }
+
+            let validPassword = await bcrypt.compare(password, user.password);
+            if (validPassword) {
+                let token = jwt.sign({ email: user.email }, process.env.JWT_SECRET);
+                return res.status(200).send({ token });
+            } else {
+                return res.send({ msg: "Invalid password" });
+            }
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).send({
+            msg: "cannot login. Internal server error"
+        });
+    }
+});
+    app.get("/testToken", verifyToken, async (req, res) =>{
+        res.send("protected route")
+    })
 
 
 
