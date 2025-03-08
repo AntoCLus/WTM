@@ -19,6 +19,7 @@
 ## Monitor the "in what?" :chart_with_downwards_trend: 
 
 what the money?? 💶 :euro:
+![Sample Image](https:../WTM/client/src/images/readme.png)
 
 ## 📦 **What's included**
 ### Working with the following technologies: **React**, **Js**, **Bootstrap**, **Css**, **MongoDB**, **Postman**, **NodeJs** ###
