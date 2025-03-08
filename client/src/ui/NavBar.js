@@ -1,34 +1,54 @@
 import React from 'react';
- 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './NavBar.css'
 
+
+import { Link } from "react-router-dom";
 
 export function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-            <div className="container">
-                <a className="logo" href="#"><img src="/client/src/images/logo.jpg" alt="Logo" className="logo" /></a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul className="navbar-nav mx-auto">
-                        <li className="nav-item">
-                            <a className="nav-link active" href="#">Home</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Features</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Contact Us</a>
-                        </li>
-                    </ul>
-                    <div className="d-flex">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <Link className="navbar-brand" to="/">WTM</Link>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul className="navbar-nav">
+                    <li className="nav-item active">
+                        <Link className="nav-link" to="/">Home</Link>
+                    </li>
+                </ul>
+                <div className="d-flex">
+                    <Link to="/login">
                         <button className="btn btn-light ms-3">Login</button>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </nav>
     );
 }
+
+/*export function Navbar() {
+    return (
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">WTM</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+    </ul>
+    <div className="d-flex">
+    <button className="btn btn-light ms-3">Login</button>
+                    </div>
+  </div>
+</nav>
+          
+    );
+}*/
 
 //export default Navbar;

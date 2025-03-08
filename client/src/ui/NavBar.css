@@ -1,7 +1,10 @@
-.Navbar{
+.navbar{
     display: flex;
+    margin-top: 15px;
+    justify-content: end;
 
 }
+/*
 .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -13,4 +16,4 @@
 
 .btn-login {
     margin-left: 15px;
-}
+}*/
