@@ -12,7 +12,6 @@ const jwt = require ("jsonwebtoken")
 const verifyToken = require('./middleware/auth')
 const User = require('./models/userModel')
 const expensesRoutes = require("./routes/expensesRoutes");
-
 require('dotenv').config();
 /*const { default: axios } = require("axios")*/
 
