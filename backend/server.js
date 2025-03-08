@@ -3,25 +3,25 @@ const app = express()
 const connection = require ("./connection")
 const incomeRoute = require("./routes/incomeRoutes")
 const taxesRoute = require ("./routes/taxesRoutes")
-const ExpensesRoutes = require ("./routes/ExpensesRoutes")
 const cors = require("cors")
 const mongoose = require("mongoose")
 const PORT= 8000
-const routes = require('./routes/ExpensesRoutes')
-app.use(routes)
+const routes = require("./routes/routers")
 const bcrypt = require ("bcrypt")
 const jwt = require ("jsonwebtoken")
 const verifyToken = require('./middleware/auth')
 const User = require('./models/userModel')
-const { default: axios } = require("axios")
+const expensesRoutes = require("./routes/expensesRoutes");
 
-
+require('dotenv').config();
+/*const { default: axios } = require("axios")*/
 
 app.use(express.json())
 app.use(cors())
-app.use("incomes", incomeRoute);
-app.use("taxes", taxesRoute);
-app.use("/expenses", ExpensesRoutes);
+app.use("/incomes", incomeRoute);
+app.use("/taxes", taxesRoute);
+app.use("/expenses", expensesRoutes);
+app.use("/routes", routes)
 
 
 app.post("/register", async (req, res) =>{
@@ -36,7 +36,7 @@ app.post("/register", async (req, res) =>{
                 msg: "email exists, please login or register with a new email"
             })
         }
-        let hashPassword = await bcrypt.hash (password, +process.env.SALT_ROUND)
+        let hashPassword = await bcrypt.hash(password, parseInt(process.env.SALT_ROUND))
         await User.create ({ name, lastName, email, password: hashPassword})
         return res.status(200).send ({ msg: "registered successfully"})
     }catch (err){
@@ -77,6 +77,6 @@ app.post("/login", async (req, res) => {
 
 
 app.listen(PORT, () =>{
-    console.log('Server started listening on port ${8080}')
+    console.log(`Server started listening on port ${8000}`)
 
 })

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const verifyToken = require("../middleware/authorization");
+const verifyToken = require("../middleware/auth");
 const {
     getAllServices,
     createService,
@@ -16,3 +16,5 @@ const {
   router.delete("/:id", deleteService);
   router.post("/register",register)
   router.post("/login",login)
+
+  module.exports = router; 
