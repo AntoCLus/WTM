@@ -18,7 +18,7 @@ function Login() {
       if (res.status === 200) {
         alert(res.data.msg);
         localStorage.setItem("token", res.data.token);
-        navigate("/expenses")
+        navigate("/ExpenseManager")
       }
     } catch (error) {
       alert("Can not log in, please check your email or password");

@@ -13,6 +13,7 @@ import LandingPage from './components/LandingPage';
 import { Navbar } from './ui/NavBar';
 import Login from './components/Login';
 import Register from './components/register';
+import ExpenseManager from './components/ExpenseManager';
 
 function App() {
   const [expenses, setExpenses] = useState([]);
@@ -53,6 +54,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/ExpenseManager" element={<ExpenseManager />} />
           <Route
             path="/expenses"
             element={<ExpenseItem getAllExpenses={getAllExpenses} />}

@@ -7,7 +7,7 @@ function ExpenseItem({ getAllExpenses, expenses, deleteExpense, editExpense, Exp
 
   async function deleteExpense(id) {
     try{
-      await axios.delete('http://localhost:8000/expenses/${id}')
+      await axios.delete(`http://localhost:8000/api/expenses/${id}`)
         getAllExpenses()
       
     } catch (error){

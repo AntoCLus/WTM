@@ -8,7 +8,8 @@ import { Navbar } from '../ui/NavBar';
 
 
 export const CalendarWTM = () => {
-    const [selectedDate, setSelectedDate] = useState(null);
+    /*const [selectedDate, setSelectedDate] = useState(null);*/
+    const [selectedDate, setSelectedDate] = useState(new Date());
     const [events, setEvents] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [eventText, setEventText] = useState('');
@@ -72,6 +73,7 @@ export const CalendarWTM = () => {
     setShowModal(false);
   };
 
+     /*calendarType="US" */
   return (
     <div className="calendar">
     <Navbar/>
@@ -79,11 +81,8 @@ export const CalendarWTM = () => {
     
     <h2 className='amount'>Amount</h2>
      <div className="container">
-      <Calendar
-        value={selectedDate}
-        onChange={handleDateChange}
-        calendarType="ISO 8601"
-      />
+     <Calendar value={selectedDate} onChange={setSelectedDate} calendarType="US"  />
+
       <button className="save-button" onClick={handleAddEvent}>Add</button>
 
       
