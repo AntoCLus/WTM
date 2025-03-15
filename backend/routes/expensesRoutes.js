@@ -6,20 +6,27 @@ app.use(express.json());
 const cors = require('cors');
 app.use(cors())
 
+router.post("/", createExpenses);
+router.get("/", getAllExpenses);
+router.delete("/:id", deleteExpenses);
+router.put("/:id", updateExpenses);
+/*
+router.post("/api/expenses", createExpenses)
+router.get("/api/expenses", getAllExpenses)
+router.delete("/api/expenses/:id", deleteExpenses)
+router.put("/api/expenses/:id", updateExpenses)
+/*router.post("/expenses/create", createExpenses)
 
 
+router.get("/", getAllExpenses)*/
 
-router.post("/expenses/create", createExpenses)
-router.get("/", getAllExpenses)
-router.delete("/:id", deleteExpenses)
-router.put("/:id", updateExpenses)
-app.post('/expenses/create', createExpenses);
+/*app.post('/expenses/create', createExpenses);
 
 app.get('/expenses', getAllExpenses);
 
 app.delete('/expenses/:id', deleteExpenses);
 
-app.put('/expenses/:id', updateExpenses);
+app.put('/expenses/:id', updateExpenses);*/
 
 
 module.exports = router;

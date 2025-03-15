@@ -19,7 +19,7 @@ app.use(express.json())
 app.use(cors())
 app.use("/incomes", incomeRoute);
 app.use("/taxes", taxesRoute);
-app.use("/expenses", expensesRoutes);
+app.use("/api/expenses", expensesRoutes);
 app.use("/routes", routes)
 
 
