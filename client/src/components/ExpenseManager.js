@@ -3,8 +3,8 @@ import Calendar from 'react-calendar';
 import axios from 'axios';
 import 'react-calendar/dist/Calendar.css';
 import './Pages.css';
-import { Header } from '../ui/Header';
-import { Navbar } from '../ui/NavBar';
+
+
 
 const ExpenseManager = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -32,13 +32,13 @@ const ExpenseManager = () => {
       if (editingExpense) {
         await axios.put(`http://localhost:8000/api/expenses/${editingExpense._id}`, {
           amount,
-          date: selectedDate,
+          date: selectedDate.toISOString(),
           description,
         });
       } else {
         await axios.post('http://localhost:8000/api/expenses', {
           amount,
-          date: selectedDate,
+          date: selectedDate.toISOString(),
           description,
         });
       }
@@ -73,9 +73,8 @@ const ExpenseManager = () => {
 
   return (
     <div className="expense-manager">
-      <Navbar />
-      <Header />
-      <h2>Manage Expenses</h2>
+     
+      <h2 className='managertitle'>Manage Expenses</h2>
       <Calendar value={selectedDate} onChange={setSelectedDate} calendarType="US" />
       <form onSubmit={handleSubmit}>
         <input
