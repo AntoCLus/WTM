@@ -1,8 +1,6 @@
 const express = require("express")
 const app = express()
 const connection = require ("./connection")
-const incomeRoute = require("./routes/incomeRoutes")
-const taxesRoute = require ("./routes/taxesRoutes")
 const cors = require("cors")
 const mongoose = require("mongoose")
 const PORT= 8000
@@ -17,8 +15,6 @@ require('dotenv').config();
 
 app.use(express.json())
 app.use(cors())
-app.use("/incomes", incomeRoute);
-app.use("/taxes", taxesRoute);
 app.use("/api/expenses", expensesRoutes);
 app.use("/routes", routes)
 
