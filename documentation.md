@@ -120,7 +120,7 @@
 **Example Request in Postman:**
 1. Open Postman.
 2. Create a new `POST` request.
-3. Set the URL to `http://yourapiurl.com/income/create`.
+3. Set the URL to `http://yourapiurl.com/expense/create`.
 4. Go to the `Body` tab and select `raw` and `JSON`.
 5. Enter the request body as shown above.
 6. Click `Send`.
@@ -172,7 +172,7 @@
     - **Body:**
         ```json
         {
-            "message": "Income deleted successfully"
+            "message": "expense deleted successfully"
         }
         ```
 - **Error:**
@@ -180,7 +180,7 @@
     - **Body:**
         ```json
         {
-            "error": "Income not found"
+            "error": "expense not found"
         }
         ```
 
@@ -211,7 +211,7 @@
     - **Body:**
         ```json
         {
-            "message": "Income updated successfully"
+            "message": "expense updated successfully"
         }
         ```
 - **Error:**
@@ -226,7 +226,7 @@
     - **Body:**
         ```json
         {
-            "error": "Income not found"
+            "error": "expense not found"
         }
         ```
 

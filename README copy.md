@@ -20,6 +20,7 @@
 
 what the money?? 💶 :euro:
 ![Sample Image](https:../WTM/client/src/images/readme.png)
+![Sample image](https:../WTM/client/src/images/readme2.png)
 
 ## 📦 **What's included**
 ### Working with the following technologies: **React**, **Js**, **Bootstrap**, **Css**, **MongoDB**, **Postman**, **NodeJs** ###
