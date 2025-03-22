@@ -13,8 +13,8 @@
 </p>
 
 ##sample: 
-![Sample Image](https:../WTM/client/src/images/readme.png)
-![Sample image](https:../WTM/client/src/images/readme2.png)
+![Sample Image](client/src/images/readme.png)
+![Sample image](client/src/images/readme2.png)
 
 # WHAT THE MONEY #
 - Does it ever happen to you that you that :money_with_wings: money flies away and you don't know why?
