@@ -1,6 +1,7 @@
 <p align="center">
   <a href="https://github.com/AntoCLus/WTM">
     <img src="../WTM/client/src/images/readme.png" alt="Logo" width=72 height=72>
+    <img src="../WTM/client/src/images/readme.png">
   </a>
 
   <h1 align="center">🌟 **WTM** 🌟</h1>
@@ -19,7 +20,8 @@
 ## Monitor the "in what?" :chart_with_downwards_trend: 
 
 what the money?? 💶 :euro:
-![Sample Image](https:../WTM/client/src/images/readme.png)
+![Sample Image](https:../WTM/client/src/images/readme2.png)
+
 
 ## 📦 **What's included**
 ### Working with the following technologies: **React**, **Js**, **Bootstrap**, **Css**, **MongoDB**, **Postman**, **NodeJs** ###
