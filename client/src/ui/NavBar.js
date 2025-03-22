@@ -1,11 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavBar.css'
-
-
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
 export function Navbar() {
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            try {
+                const decoded = jwtDecode(token); 
+                setUser(decoded); 
+            } catch (error) {
+                console.error("Invalid token", error);
+                localStorage.removeItem("token"); 
+            }
+        }
+    }, []);
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        setUser(null);
+        navigate("/login"); 
+        
+    };
+    const location = useLocation();
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="navbar-brand" to="/">WTM</Link>
@@ -19,36 +41,26 @@ export function Navbar() {
                         <Link className="nav-link" to="/">Home</Link>
                     </li>
                 </ul>
-                <div className="d-flex">
+
+                {/* Only show Login button when the user is not logged in */}
+                {!user && (
                     <Link to="/login">
                         <button className="btn btn-light ms-3">Login</button>
                     </Link>
-                </div>
+                )}
+
+                {location.pathname === "/ExpenseManager" && user && (
+                    <div className="d-flex">
+                        <span className="navbar-text me-3">Welcome, {user.email.split("@")[0]}</span>
+                        <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+                    </div>
+                )}
             </div>
         </nav>
     );
 }
 
-/*export function Navbar() {
-    return (
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">WTM</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-    </ul>
-    <div className="d-flex">
-    <button className="btn btn-light ms-3">Login</button>
-                    </div>
-  </div>
-</nav>
-          
-    );
-}*/
+   
 
-//export default Navbar;
+
+

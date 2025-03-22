@@ -13,9 +13,7 @@ export function Header() {
     setIsLoggedIn(true);
   };
 
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  };
+
 
   return (
     <div className="container-header">

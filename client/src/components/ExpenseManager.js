@@ -138,46 +138,6 @@ const ExpenseManager = () => {
   );
 };
   export default ExpenseManager;
-  /*return (
-    <div className="expense-manager">
-     
-      <h2 className='managertitle'>Manage Expenses</h2>
-      <div className='calendarContainer'>
-      <Calendar value={selectedDate} onChange={setSelectedDate} calendarType="US" />
-       </div>
-
-      <div className="expense-list">
-        {expenses.length > 0 ? (
-          expenses.map((expense) => (
-            <div key={expense._id} className="expense-item">
-              <p>{new Date(expense.date).toLocaleDateString()}: ${expense.amount} - {expense.description}</p>
-              <button onClick={() => handleEdit(expense)}>Edit</button>
-              <button onClick={() => handleDelete(expense._id)}>Delete</button>
-            </div>
-          ))
-        ) : (
-          <p>No expenses found.</p>
-        )}
-      </div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="number"
-          placeholder="Amount"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          required
-        />
-        <button type="submit">{editingExpense ? 'Update' : 'Add'} Expense</button>
-      </form>
-    </div>
-  );
-};*/
+  
 
 

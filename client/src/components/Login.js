@@ -8,21 +8,24 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate()
-  let decoded;
-  let token;
-
-  async function handleLogin(e) {
-    try {
+ 
+    async function handleLogin(e) {
       e.preventDefault();
-      let res = await axios.post("http://localhost:8000/login", { email, password });
-      if (res.status === 200) {
-        alert(res.data.msg);
-        localStorage.setItem("token", res.data.token);
-        navigate("/ExpenseManager")
+  
+      try {
+          const res = await axios.post("http://localhost:8000/login", { email, password });
+  
+          if (res.data.success) {
+              alert(res.data.msg);
+              localStorage.setItem("token", res.data.token);
+              navigate("/ExpenseManager");
+          } else {
+              alert(res.data.msg);
+          }
+      } catch (error) {
+          console.error("Login error:", error.response?.data || error.message);
+          alert(error.response?.data?.msg || "Can not log in, please check your email or password.");
       }
-    } catch (error) {
-      alert("Can not log in, please check your email or password");
-    }
   }
 
   return (
