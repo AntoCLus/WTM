@@ -1,6 +1,7 @@
 <p align="center">
   <a href="https://github.com/AntoCLus/WTM">
     <img src="../WTM/client/src/images/readme.png" alt="Logo" width=72 height=72>
+    <img src="../WTM/client/src/images/readme2.png" >
   </a>
 
   <h1 align="center">🌟 **WTM** 🌟</h1>
