@@ -2,17 +2,18 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 6rem;
+    height: 4rem;
     width: 100%;
     background-image: url('../images/wtm.jpg');
     background-size: cover;
     background-position: center center;
     padding: 1rem;
+    z-index: 1000;
 }
 
 
 .containerf {
-
-    min-height: 100vh;
-    position: relative;
+    padding-bottom: 6rem; 
+    min-height: calc(100vh - 6rem);
+    position: fixed;
 }

@@ -1,0 +1,19 @@
+.navbar{
+    display: flex;
+    margin-top: 15px;
+    justify-content: end;
+
+}
+/*
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.btn-login {
+    margin-left: 15px;
+}*/

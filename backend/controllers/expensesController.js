@@ -22,9 +22,26 @@ const getAllExpenses= async (req, res) =>{
     }
 }
 
-
-
 const deleteExpenses = async (req, res) => {
+    try {
+        await Expenses.deleteOne({ _id: req.params.id });
+        res.status(200).send({ msg: "Deleted successfully" });
+    } catch (error) {
+        res.status(500).send({ msg: "Internal server error" });
+    }
+};
+
+
+const updateExpenses = async (req, res) => {
+    try {
+        const updatedExpense = await Expenses.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        res.status(200).send({ msg: "Updated successfully", expense: updatedExpense });
+    } catch (error) {
+        res.status(500).send({ msg: "Internal server error" });
+    }
+};
+module.exports = {createExpenses, deleteExpenses, updateExpenses, getAllExpenses};
+/*const deleteExpenses = async (req, res) => {
     try { 
         const userConfirmation = req.body.confirmation; 
         if (userConfirmation === 'yes') {
@@ -36,12 +53,16 @@ const deleteExpenses = async (req, res) => {
     } catch (error) {
         res.status(500).send({ msg: "Internal server error" });
     }
-}
-
-
-
-
-const updateExpenses= async (req, res) =>{
+}*/
+/*const updateExpenses = async (req, res) => {
+    try {
+        await Expenses.updateOne({ _id: req.params.id }, req.body);
+        res.status(200).send({ msg: "Updated successfully" });
+    } catch (error) {
+        res.status(500).send({ msg: "Internal server error" });
+    }
+};*/
+/*const updateExpenses= async (req, res) =>{
     try{
         let clientValue = req.value
         await Expenses.updateOne({_id: req.params.id}, clientValue);
@@ -49,7 +70,7 @@ const updateExpenses= async (req, res) =>{
     } catch (error){
         res.status(500).send({msg:"internal server error"})
     }
-}
+}*/
 
 
 
@@ -95,4 +116,3 @@ app.delete('/expenses/:id', async (req, res) => {
 });
 */
 
-module.exports = {createExpenses, deleteExpenses, updateExpenses, getAllExpenses};

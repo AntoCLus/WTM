@@ -1,0 +1,75 @@
+$breakpoints: (
+  mobileXs: 400px,
+  mobile: 480px,
+  luisa: 570px,
+  media-tablet: 650px,
+  tablet: 768px,
+  ipad: 820px,
+  screenXs: 880px,
+  screen: 1024px,
+  screenxl: 1069px,
+  desktop: 1200px,
+  large: 1440px
+);
+
+@mixin media-up($breakpoint) {
+  @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+.App {
+  text-align: center;
+  text-decoration: none;
+
+  @include media-up(mobile) {
+    background-color: lightgray;
+  }
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+
+  @include media-up(tablet) {
+    height: 30vmin;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  @include media-up(ipad) {
+    background-color: darkgray;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+
+  @include media-up(screen) {
+    font-size: 14px;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
