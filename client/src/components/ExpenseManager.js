@@ -3,6 +3,8 @@ import Calendar from 'react-calendar';
 import axios from 'axios';
 import 'react-calendar/dist/Calendar.css';
 import './Pages.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 
 
@@ -70,12 +72,93 @@ const ExpenseManager = () => {
     setDescription('');
     setEditingExpense(null);
   };
-
   return (
+    <div className="container mt-4">
+      <h2 className="text-center mb-4">Manage Expenses</h2>
+  
+      <div className="row">
+        {/* Calendar on the left */}
+        <div className="col-md-4">
+          <div className="p-3 border rounded bg-light">
+            <Calendar value={selectedDate} onChange={setSelectedDate} calendarType="US" />
+          </div>
+        </div>
+  
+        {/* Expense List on the right */}
+        <div className="col-md-8">
+          <div className="p-3 border rounded bg-white">
+            <h4>Expense List</h4>
+            {expenses.length > 0 ? (
+              expenses.map((expense) => (
+                <div key={expense._id} className="d-flex justify-content-between align-items-center p-2 border-bottom">
+                  <p className="mb-0">{new Date(expense.date).toLocaleDateString()}: <strong>${expense.amount}</strong> - {expense.description}</p>
+                  <div>
+                    <button className="btn btn-sm btn-warning me-2" onClick={() => handleEdit(expense)}>Edit</button>
+                    <button className="btn btn-sm btn-danger" onClick={() => handleDelete(expense._id)}>Delete</button>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p className="text-muted">No expenses found.</p>
+            )}
+          </div>
+        </div>
+      </div>
+  
+      {/* Form below */}
+      <div className="row mt-4">
+        <div className="col">
+          <div className="p-3 border rounded bg-white">
+            <h4>{editingExpense ? "Update Expense" : "Add Expense"}</h4>
+            <form onSubmit={handleSubmit} className="d-flex gap-2">
+              <input
+                type="number"
+                className="form-control"
+                placeholder="Amount"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                required
+              />
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                required
+              />
+              <button type="submit" className="btn btn-primary">
+                {editingExpense ? "Update" : "Add"} Expense
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+  export default ExpenseManager;
+  /*return (
     <div className="expense-manager">
      
       <h2 className='managertitle'>Manage Expenses</h2>
+      <div className='calendarContainer'>
       <Calendar value={selectedDate} onChange={setSelectedDate} calendarType="US" />
+       </div>
+
+      <div className="expense-list">
+        {expenses.length > 0 ? (
+          expenses.map((expense) => (
+            <div key={expense._id} className="expense-item">
+              <p>{new Date(expense.date).toLocaleDateString()}: ${expense.amount} - {expense.description}</p>
+              <button onClick={() => handleEdit(expense)}>Edit</button>
+              <button onClick={() => handleDelete(expense._id)}>Delete</button>
+            </div>
+          ))
+        ) : (
+          <p>No expenses found.</p>
+        )}
+      </div>
       <form onSubmit={handleSubmit}>
         <input
           type="number"
@@ -93,21 +176,8 @@ const ExpenseManager = () => {
         />
         <button type="submit">{editingExpense ? 'Update' : 'Add'} Expense</button>
       </form>
-      <div className="expense-list">
-        {expenses.length > 0 ? (
-          expenses.map((expense) => (
-            <div key={expense._id} className="expense-item">
-              <p>{new Date(expense.date).toLocaleDateString()}: ${expense.amount} - {expense.description}</p>
-              <button onClick={() => handleEdit(expense)}>Edit</button>
-              <button onClick={() => handleDelete(expense._id)}>Delete</button>
-            </div>
-          ))
-        ) : (
-          <p>No expenses found.</p>
-        )}
-      </div>
     </div>
   );
-};
+};*/
 
-export default ExpenseManager;
+

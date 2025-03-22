@@ -126,6 +126,7 @@
 .managertitle{
   text-align: center;
 }
+
 .expense-form{
   flex:1;
   display: flex;
@@ -134,6 +135,30 @@
   flex-direction: column;
   margin-top: 20px;
 }
+.calendarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.expense-list {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+}
+
+.expense-item {
+  background-color: floralwhite;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  text-align: left;
+}
+/*
 .expense-list {
   flex: 1;
   display: flex;
@@ -147,4 +172,4 @@
   margin-top: 10px;
   width: 90%;
   text-align: left;
-}
+}*/
