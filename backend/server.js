@@ -39,36 +39,37 @@ app.post("/register", async (req, res) =>{
         res.status(500).send({ msg: "Internal server error, please try again later" })
     }
 })
+
 app.post("/login", async (req, res) => {
     try {
-        let { email, password } = req.body;
-        if (email.length < 1 || password.length < 1) {
-            return res.send({ msg: "email and password are required" });
-        } else {
-            let user = await User.findOne({ email });
-            if (!user) {
-                return res.send({ msg: "User not found" });
-            }
+        const { email, password } = req.body;
 
-            let validPassword = await bcrypt.compare(password, user.password);
-            if (validPassword) {
-                let token = jwt.sign({ email: user.email }, process.env.JWT_SECRET);
-                return res.status(200).send({ token });
-            } else {
-                return res.send({ msg: "Invalid password" });
-            }
+        if (!email || !password) {
+            return res.status(400).json({ success: false, msg: "Email and password are required" });
         }
-    } catch (err) {
-        console.log(err);
-        res.status(500).send({
-            msg: "cannot login. Internal server error"
+
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ success: false, msg: "User not found" });
+        }
+
+        const validPassword = await bcrypt.compare(password, user.password);
+        if (!validPassword) {
+            return res.status(401).json({ success: false, msg: "Invalid password" });
+        }
+
+        const token = jwt.sign({ email: user.email, id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+
+        res.status(200).json({
+            success: true,
+            msg: "Login successful",
+            token
         });
+    } catch (err) {
+        console.error("Login error:", err);
+        res.status(500).json({ success: false, msg: "Internal server error" });
     }
 });
-    app.get("/testToken", verifyToken, async (req, res) =>{
-        res.send("protected route")
-    })
-
 
 
 app.listen(PORT, () =>{
