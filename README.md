@@ -1,6 +1,7 @@
 <p align="center">
   <a href="https://github.com/AntoCLus/WTM">
-    <img src="../WTM/client/src/images/readme.png" alt="Logo" width=72 height=72>
+    <img src="..//WTM/client/src/images/readme.png" alt="Logo" width=72 height=72>
+    <img src="../WTM/client/src/images/readme2.png">
   </a>
 
   <h1 align="center">🌟 **WTM** 🌟</h1>
@@ -11,7 +12,9 @@
   </p>
 </p>
 
-##sample: ![Alt text](readme.png)
+##sample: 
+![Sample Image](https:../WTM/client/src/images/readme.png)
+![Sample image](https:../WTM/client/src/images/readme2.png)
 
 # WHAT THE MONEY #
 - Does it ever happen to you that you that :money_with_wings: money flies away and you don't know why?
