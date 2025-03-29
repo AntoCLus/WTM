@@ -49,7 +49,7 @@ export function Navbar() {
                     </Link>
                 )}
 
-                {location.pathname === "/ExpenseManager" && user && (
+            {location.pathname === "/ExpenseManager" && user && (
                     <div className="d-flex">
                         <span className="navbar-text me-3">Welcome, {user.email.split("@")[0]}</span>
                         <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
