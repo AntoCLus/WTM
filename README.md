@@ -41,6 +41,9 @@ what the money?? 💶 :euro:
 - Services
 - Home Page
 
+## Deployment
+[Live App](https://wtm-wbtw-ay9e169b5-antonellas-projects-8b3c04df.vercel.app)
+
 ## Creators
 
 **Antonella** 🛍️🌟👜
