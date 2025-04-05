@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "mongoose": "^8.13.2",
     "sass": "^1.85.1"
   }
 }
